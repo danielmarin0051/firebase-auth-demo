@@ -1,0 +1,12 @@
+.heroContent {
+  padding: 8px 0px 6px;
+}
+.cardHeader {
+  background-color: rgb(235, 226, 226);
+}
+.cardPricing {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 2px;
+}

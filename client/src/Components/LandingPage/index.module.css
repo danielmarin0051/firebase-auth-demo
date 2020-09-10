@@ -1,0 +1,134 @@
+.root {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.slide {
+  position: relative;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+.footer {
+  position: relative;
+  scroll-snap-align: start;
+}
+.background {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  transform: rotate(180deg);
+}
+.background1 {
+  background-image: url("../../images/background.svg");
+}
+.background2 {
+  background-image: url("../../images/background2.svg");
+}
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.slide:nth-of-type(2) .foreground {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateX(-50%) translateY(-50%);
+  min-width: 500px;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.signInWrapper {
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  transform: translateX(50%) translateY(-50%);
+  border-radius: 30px;
+  padding: 0.1px 30px 50px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+}
+.displayNone {
+  display: none;
+}
+.hero > img {
+  width: 100%;
+}
+.hero > h1 {
+  font-weight: normal;
+  font-size: 25px;
+  color: black;
+  text-align: center;
+}
+
+.hero > h1:nth-child(2) {
+  margin-top: 15px;
+}
+@media screen and (max-width: 1400px) {
+  .hero {
+    max-width: 40%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .foreground {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    margin-bottom: 40px;
+  }
+  .signInWrapper {
+    position: relative;
+    transform: none;
+    top: auto;
+    right: auto;
+  }
+  .hero > h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .root {
+    scroll-snap-type: none;
+  }
+  .slide {
+    scroll-snap-align: none;
+  }
+  .footer {
+    scroll-snap-align: none;
+  }
+  .signInWrapper {
+    display: none;
+  }
+  .hero {
+    min-width: 0px;
+    max-width: 70%;
+  }
+  .hero > h1 {
+    font-size: 17px;
+  }
+  .slide:nth-of-type(2) {
+    height: 1550px;
+  }
+}
